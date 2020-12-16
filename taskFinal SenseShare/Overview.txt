@@ -1,0 +1,98 @@
+
+　センスシェア　要件定義
+
+	１：概要
+		mixiの亜種。大小のコミュニティ内で自分の読んだ本を周囲にアピールする為のサービス。
+		ユーザーのコミュニティ作成を推進。パブリックとプライベートの二種類の使用方法で自由に使ってもらう。
+		運営の作った時限コミュニティ。企業やインフルエンサーの特集で時限式のコミュニティを作り、書籍の購入意欲を促進する。
+
+	２：背景と目的
+		「才能（センス）は磨く物」の言葉から思いついたサービス。読んだ本を身近な人と共有する専用のサービスがあると面白いかもしれないと思った為。
+		ぱっと思いついた使用用途は
+			「ママさんコミュで普段話さない人とも絵本の紹介が出来る」
+			「会社コミュで社員に学ばせたい書籍の紹介（会社の方針を暗に示す機会を期待）」
+			「学生同士の書籍による話題づくり、話題共有の場」
+
+	３：機能要件
+		運営側
+			(core)	・コミュニティの作成・削除
+			(core)	・ユーザー管理
+				・コミュニティ総数管理機能（課金要素有り）
+
+		ユーザー側
+
+			(core)	・ユーザー登録・登録解除
+			(core)	・コミュニティの作成・削除
+			(core)	・書籍推薦登録機能
+			(core)	・推薦書のアピール機能（コミュニティ選択可）
+				・コミュニティ内使用アイテム課金・プレミアムユーザー登録課金
+				・コミュニティ内掲示板機能
+				・コミュニティ内評価機能（パブリックのみ）
+
+		コミュニティ
+			（サーバーの都合上で）コミュニティ作成枠を仮に１００とする
+			運営は作成枠をノーマル枠とプレミアム枠の２種類に分ける
+			ノーマル枠は無料登録アカウントでもコミュニティを作成できる（不満が出ない範囲で枠が余りにくい位が望ましい）。
+			プレミアム枠は課金アカウントのみコミュニティ作成できる。
+			サーバーが増設されるタイミングコミュニティ作成予約を受付け、運営が抽選する（半分商売の為の演出に近い部分）。
+
+	４：利用方法
+		ユーザーがアカウント登録をするとマイページが作成される。
+		ユーザーは登録時に運営があらかじめ作ったパブリックコミュニティに参加できる。
+		マイページからは推薦書籍の登録、貰った高評価数等確認できる。
+
+
+	５：システム要件（仮）
+		開発言語
+			Java, HTML5 & CSS, MySQL?
+
+		フレームワーク
+			SpringBoot2, Vue.js
+		開発環境
+			eclipse
+		データベース
+			AWS
+
+	６：テーブル定義　(core)のみ
+
+		・User（登録ユーザー）
+			ID VARCHAR(8) IS NOT NULL PRIMARY KEY,
+			NAME VARCHAR(12) IS NOT NULL,
+			PASS INT(8) IS NOT NULL,
+			DoA BIT IS NOT NULL DEFAULT 1,
+			PREMIUM BIT IS NOT NULL DEFAULT 0
+			以下追加案
+			課金アイテム　
+			
+		・Community（コミュニティ）
+			Com_NAME VARCHAR(30),
+			Admin_NAME VARCHAR(12),
+			PREMIUM BIT IS NOT NULL DEFAULT 0
+			DoA BIT IS NOT NULL DEFAULT 1,
+
+		・(Com_NAME)Community Comment（コミュニティの発言）
+			SpeakerID VARCHAR(8) IS NOT NULL,
+			SpeakerNAME VARCHAR(12) IS NOT NULL,
+			SpeakDATE DATETIME IS NOT NULL,
+			COMMENT TEXT IS NOT NULL,
+			EDIT BIT IS NOT NULL DEFAULT 0,
+			DELETE BIT IS NOT NULL DEFAULT 0
+
+		・RecommendBook（推薦書）
+			RecommenderID VARCHAR(8) IS NOT NULL,
+			BookNAME TEXT IS NOT NULL,
+			Rec_DATE DATE IS NOT NULL,
+			Rec_NUMBER CHAR(6) IS NOT NULL PRIMARY KEY,
+			DoA BIT IS NOT NULL DEFAULT 1
+
+
+
+
+
+
+
+
+
+
+
+　

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>計算機アプリケーション</title>
+        <link rel="stylesheet" type="text/css" href="css/calc.css">
+    </head>
+    <body>
+        <div class="contents">
+            <h1>計算機アプリケーション</h1><br>
+            <p id="smile">⊂二二二（ ＾ω＾）二⊃ﾌﾞｰﾝ</p>
+            <br>
+            <input type="text" id="result">
+            <div>
+                <input type="button" value="C" class="button" onclick="calcClear()">
+            </div>
+            <div>
+              <input type="button" value="1" class="button" onclick="edit(this)">
+              <input type="button" value="2" class="button" onclick="edit(this)">
+              <input type="button" value="3" class="button" onclick="edit(this)">
+              <input type="button" value="+" class="button" onclick="edit(this)">
+            </div>
+            <div>
+              <input type="button" value="4" class="button" onclick="edit(this)">
+              <input type="button" value="5" class="button" onclick="edit(this)">
+              <input type="button" value="6" class="button" onclick="edit(this)">
+              <input type="button" value="-" class="button" onclick="edit(this)">
+            </div>
+            <div>
+              <input type="button" value="7" class="button" onclick="edit(this)">
+              <input type="button" value="8" class="button" onclick="edit(this)">
+              <input type="button" value="9" class="button" onclick="edit(this)">
+              <input type="button" value="/" class="button" onclick="edit(this)">
+            </div>
+            <div>
+              <input type="button" value="0" class="button" onclick="edit(this)">
+              <input type="button" value="." class="button" onclick="edit(this)">
+              <input type="button" value="*" class="button" onclick="edit(this)">
+              <input type="button" value="=" class="button" onclick="calc()">
+            </div>
+            <script type="text/javascript" src="js/calc.js"></script>
+        </div>
+    </body>
+</html>

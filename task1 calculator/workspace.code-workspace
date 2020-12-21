@@ -1,0 +1,26 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+		{
+			"name": "Attach to Chrome",
+			"port": 9222,
+			"request": "attach",
+			"type": "pwa-chrome",
+			"webRoot": "${workspaceFolder}"
+		},
+			{
+				"type": "pwa-chrome",
+				"request": "launch",
+				"name": "Open calculator.html",
+				"file": "c:\\Users\\tani\\Desktop\\upwardTask\\task1 calculator\\calculator.html"
+			}
+		]
+	}
+}

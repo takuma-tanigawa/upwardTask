@@ -1,0 +1,12 @@
+
+.contents{
+    text-align: center;
+
+}
+
+.button{
+    min-width: 30px;
+    font-size: x-large;
+    padding:10px;
+    margin: 5px;
+}

@@ -11,13 +11,22 @@
         <br>
         <ul class="list" id="ToDoList"></ul>
         <div>
-            <input type="text" id="ToDoNumber" value="登録番号を入力してください" />
-            <input type="text" id="ToDoTitle" value="タイトルを入力してください"/>
-            <input type="text" id="ToDoContent" value="ToDoを入力してください" />
-            <input type="checkbox" name="" id="">
-            <input type="button" value="" onclick="実行" />
+            <input type="button" value="登録" onclick="RegistrationB(1)" />
+            <input type="button" value="編集" onclick="RegistrationB(2)" />
+            <input type="button" value="削除" onclick="RegistrationB(3)" /><br>
+            <p id="mode"></p>
+            <br>
+            <input type="number" name="number" placeholder="登録番号" disabled />
+            <input type="date" name="deadLine" disabled /><br>
+            <input type="text" name="title" size="20" placeholder="タイトル" disabled /><br>
+            <input type="text" name="contents" size="50" placeholder="内容" disabled /><br>
+            <input type="radio" name="doneT" value="true" disabled />ToDo完了
+            <input type="radio" name="doneF" value="false" disabled />ToDo再開<br>
+            <br>
+            <input type="button" name="actionB" value="実行" onclick="" disabled />
+            <p id="errorMSG" style="color: crimson;">testMSG</p>
         </div>
 
-        <script type="text/javascript" src="js/listLogic.js"></script>
+        <script type="text/javascript" src="js/ToDoLosic.js"></script>
     </body>
 </html>

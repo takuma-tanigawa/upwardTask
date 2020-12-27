@@ -12,25 +12,39 @@ var resultSet;
         result.value = new Function("return " + result.value)();
     }
 
+    function calcClearAll() {
+        result.value = "0";
+        resultSet = null;
+    }
+
     function calc() {
         var resultVal = result.value;
         var resultStr = resultVal.toString();
 
         var a = resultStr.charAt(0);
 
-        switch (a) {
-            case "+":
-                result.value = resultSet + result.value;
-                break;
-            case "-":
-                result.value = resultSet - result.value;
-                break;
-            case "*":
-                result.value = resultSet * result.value;                
-                break;
-            case "/":
-                result.value = resultSet / result.value;
-                break;
+        if (resultSet != "") {
+            switch (a) {
+                case "+":
+                    result.value = resultSet + resultStr;
+                    break;
+                case "-":
+                    result.value = resultSet - resultStr;
+                    break;
+                case "*":
+                    result.value = resultSet * resultStr;
+                    break;
+                case "/":
+                    result.value = resultSet / resultStr;
+                    break;
+                case "0" :
+                    result.value = resultVal.slice(1);
+                    calc();
+                    break;
+                default :
+                    result.value = resultStr;
+                    break;
+            }
         }
 
         result.value = new Function("return " + result.value)();

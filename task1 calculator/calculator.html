@@ -9,11 +9,14 @@
     <body>
         <div class="contents">
             <h1>計算機アプリケーション</h1><br>
+            <p>C ボタン、AC ボタンを押した時に出る 0 は無視してそのまま入力してください。</p>
+            <p>計算結果で下の顔文字が変わります。</p>
             <p id="smile">⊂二二二（ ＾ω＾）二⊃ﾌﾞｰﾝ</p>
             <br>
-            <input type="text" id="result">
+            <input type="text" id="result" readonly />
             <div>
                 <input type="button" value="C" class="button" onclick="calcClear()">
+                <input type="button" value="AC" class="button" onclick="calcClearAll()">
             </div>
             <div>
               <input type="button" value="1" class="button" onclick="edit(this)">

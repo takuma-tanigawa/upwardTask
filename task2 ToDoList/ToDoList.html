@@ -4,7 +4,6 @@
     <head>
         <meta charset="UTF-8">
         <title>ToDoList</title>
-        <link rel="stylesheet" type="text/css" href="css/listDesign.css">
     </head>
     <body>
         <h1>ToDoList</h1>
@@ -13,18 +12,24 @@
         <div>
             <input type="button" value="登録" onclick="RegistrationB(1)" />
             <input type="button" value="編集" onclick="RegistrationB(2)" />
-            <input type="button" value="削除" onclick="RegistrationB(3)" /><br>
+            <input type="button" value="削除" onclick="RegistrationB(3)" />
+            <input type="button" value="前回の状況を読み込む" onclick="loadToDo()"><br>
             <p id="mode"></p>
             <br>
             <input type="number" name="number" placeholder="登録番号" disabled />
-            <input type="date" name="deadLine" disabled /><br>
+            <input type="date" name="deadLine" placeholder="期限" disabled /><br>
             <input type="text" name="title" size="20" placeholder="タイトル" disabled /><br>
-            <input type="text" name="contents" size="50" placeholder="内容" disabled /><br>
-            <input type="radio" name="doneT" value="true" disabled />ToDo完了
-            <input type="radio" name="doneF" value="false" disabled />ToDo再開<br>
+            <input type="text" name="contents" id="contents" size="50" placeholder="内容" disabled /><br>
+
+            <label>
+                <input type="radio" name="done" value="true" disabled />ToDo完了
+            </label>
+            <label>
+                <input type="radio" name="done" value="false" checked disabled />ToDo再開
+            </label><br>
             <br>
-            <input type="button" name="actionB" value="実行" onclick="" disabled />
-            <p id="errorMSG" style="color: crimson;">testMSG</p>
+            <input type="button" name="actionB" value="実行" onclick="registToDo()" disabled />
+            <p id="errorMSG" style="color: crimson;"></p>
         </div>
 
         <script type="text/javascript" src="js/ToDoLosic.js"></script>
